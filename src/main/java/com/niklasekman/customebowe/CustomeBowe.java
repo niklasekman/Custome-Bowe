@@ -1,6 +1,8 @@
 package com.niklasekman.customebowe;
 
 import com.mojang.logging.LogUtils;
+import com.niklasekman.customebowe.item.ModItemProperties;
+import com.niklasekman.customebowe.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -23,6 +25,8 @@ public class CustomeBowe
     public CustomeBowe()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -53,7 +57,7 @@ public class CustomeBowe
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             // Some client setup code
-
+            ModItemProperties.addCustomItemProperties();
         }
     }
 }

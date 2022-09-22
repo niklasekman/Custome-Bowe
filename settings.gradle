@@ -1,3 +1,5 @@
+// https://github.com/ParchmentMC/Librarian/blob/dev/docs/FORGEGRADLE.md
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
